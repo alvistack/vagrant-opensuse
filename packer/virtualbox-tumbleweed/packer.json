@@ -1,0 +1,68 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<esc><enter><wait>",
+        "linux netsetup=dhcp install=https://download.opensuse.org/tumbleweed/repo/oss/ lang=en_US textmode=1 <wait>",
+        "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml<wait>",
+        "<enter><wait>"
+      ],
+      "boot_wait": "20s",
+      "cpus": 2,
+      "disk_size": 131072,
+      "guest_os_type": "OpenSUSE_64",
+      "headless": true,
+      "http_directory": "./",
+      "iso_checksum": "none",
+      "iso_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+      "memory": 4096,
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_timeout": "3600s",
+      "ssh_username": "vagrant",
+      "type": "virtualbox-iso"
+    }
+  ],
+  "post-processors": [
+    {
+      "inline": [
+        "set -eu",
+        "export _IMAGE=\"$(ls -1d output-virtualbox-iso/packer-virtualbox-iso-*.vmdk)\"",
+        "sudo qemu-img convert -f vmdk -O qcow2 \"$_IMAGE\" \"$_IMAGE.convert\"",
+        "sudo rm -rf \"$_IMAGE\"",
+        "sudo chmod a+r /boot/vmlinuz*",
+        "sudo virt-sysprep --operations defaults,-ssh-userdir,-customize -a \"$_IMAGE.convert\"",
+        "sudo virt-sparsify --in-place \"$_IMAGE.convert\"",
+        "sudo qemu-img convert -f qcow2 -O vmdk \"$_IMAGE.convert\" \"$_IMAGE\"",
+        "sudo rm -rf \"$_IMAGE.convert\""
+      ],
+      "type": "shell-local"
+    },
+    {
+      "compression_level": 9,
+      "keep_input_artifact": true,
+      "output": "output-vagrant/package.box",
+      "provider_override": "virtualbox",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "inline": [
+        "set -eu",
+        "sudo zypper -n --gpg-auto-import-keys refresh",
+        "sudo zypper -n update -y",
+        "sudo zypper -n install -y ca-certificates curl gcc iproute2 python3 python3-devel sudo"
+      ],
+      "type": "shell"
+    },
+    {
+      "galaxy_file": "./ansible-galaxy-requirements.yml",
+      "inventory_directory": "./",
+      "playbook_file": "./packer.yml",
+      "type": "ansible",
+      "user": "vagrant"
+    }
+  ]
+}
+
