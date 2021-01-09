@@ -32,22 +32,11 @@
       changed_when: false
       ignore_errors: true
 
-    - name: apt-get -y clean
+    - name: zypper clean --all
       raw: |
         set -eu
-        apt-get -y autoremove
-        apt-get -y autoclean
-        apt-get -y clean
-        rm -rf /var/lib/apt/lists/*
-      changed_when: false
-      ignore_errors: true
-
-    - name: passwd --lock root
-      raw: |
-        set -eu
-        PASSWD="$(pwgen -1AB 32)"
-        echo "root:$PASSWD" | chpasswd
-        passwd --lock root
+        zypper clean --all
+        rm -rf /var/cache/zypper/*
       changed_when: false
       ignore_errors: true
 
