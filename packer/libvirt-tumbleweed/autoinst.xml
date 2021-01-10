@@ -104,7 +104,7 @@ ssh-keygen -A
 systemctl enable sshd.service
 mkdir -p /etc/sudoers.d
 chmod 0755 /etc/sudoers.d
-echo "vagrant ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vagrant
+echo "vagrant ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/vagrant
 chmod 0440 /etc/sudoers.d/vagrant
 chown -Rf root:root /etc/sudoers.d
 mkdir -p /home/vagrant/.ssh
