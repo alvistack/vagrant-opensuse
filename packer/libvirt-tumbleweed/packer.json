@@ -4,8 +4,9 @@
       "accelerator": "kvm",
       "boot_command": [
         "<esc><enter><wait>",
-        "linux netsetup=dhcp install=https://download.opensuse.org/tumbleweed/repo/oss/ lang=en_US textmode=1 <wait>",
-        "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml<wait>",
+        "linux netsetup=dhcp net.ifnames=0 biosdevname=0 lang=en_US textmode=1 <wait>",
+        "install=https://download.opensuse.org/tumbleweed/repo/oss/ <wait>",
+        "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml <wait>",
         "<enter><wait>"
       ],
       "boot_wait": "20s",

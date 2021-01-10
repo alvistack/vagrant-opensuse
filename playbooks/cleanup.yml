@@ -32,7 +32,32 @@
       changed_when: false
       ignore_errors: true
 
-    - name: zypper clean --all
+    - name: redhat | subscription-manager unregister
+      raw: |
+        set -eu
+        subscription-manager unregister
+      changed_when: false
+      ignore_errors: true
+
+    - name: debian | apt-get -y clean
+      raw: |
+        set -eu
+        apt-get -y autoremove
+        apt-get -y autoclean
+        apt-get -y clean
+        rm -rf /var/lib/apt/lists/*
+      changed_when: false
+      ignore_errors: true
+
+    - name: redhat | yum clean all
+      raw: |
+        set -eu
+        yum clean all
+        rm -rf /var/cache/yum/*
+      changed_when: false
+      ignore_errors: true
+
+    - name: suse | zypper clean --all
       raw: |
         set -eu
         zypper clean --all
