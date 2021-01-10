@@ -40,7 +40,7 @@
         <keep_install_network t="boolean">true</keep_install_network>
         <dns>
             <dhcp_hostname t="boolean">false</dhcp_hostname>
-            <hostname>opensuse-tumbleweed.localdomain</hostname>
+            <hostname>opensuse.localdomain</hostname>
         </dns>
         <interfaces t="list">
             <interface t="map">

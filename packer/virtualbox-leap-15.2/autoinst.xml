@@ -42,7 +42,7 @@
         <keep_install_network config:type="boolean">true</keep_install_network>
         <dns>
             <dhcp_hostname config:type="boolean">false</dhcp_hostname>
-            <hostname>opensuse-15.localdomain</hostname>
+            <hostname>opensuse.localdomain</hostname>
         </dns>
         <interfaces config:type="list">
             <interface>
