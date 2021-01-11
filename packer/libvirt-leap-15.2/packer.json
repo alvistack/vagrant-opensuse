@@ -4,12 +4,12 @@
       "accelerator": "kvm",
       "boot_command": [
         "<esc><enter><wait>",
-        "linux netsetup=dhcp net.ifnames=0 biosdevname=0 lang=en_US textmode=1 <wait>",
-        "install=https://download.opensuse.org/distribution/leap/15.2/repo/oss/ <wait>",
-        "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml <wait>",
+        "linux netsetup=dhcp net.ifnames=0 biosdevname=0 lang=en_US textmode=1 ",
+        "install=https://download.opensuse.org/distribution/leap/15.2/repo/oss/ ",
+        "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml ",
         "<enter><wait>"
       ],
-      "boot_wait": "10s",
+      "boot_wait": "20s",
       "cpus": 2,
       "disk_cache": "writeback",
       "disk_compression": true,
