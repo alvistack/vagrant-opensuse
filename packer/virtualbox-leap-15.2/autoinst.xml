@@ -47,16 +47,6 @@
         <interfaces config:type="list">
             <interface>
                 <bootproto>dhcp</bootproto>
-                <name>enp0s3</name>
-                <startmode>hotplug</startmode>
-            </interface>
-            <interface>
-                <bootproto>dhcp</bootproto>
-                <name>ens33</name>
-                <startmode>hotplug</startmode>
-            </interface>
-            <interface>
-                <bootproto>dhcp</bootproto>
                 <name>eth0</name>
                 <startmode>hotplug</startmode>
             </interface>
@@ -134,22 +124,12 @@ exit 0
         <packages config:type="list">
             <package>ca-certificates</package>
             <package>curl</package>
-            <package>gcc</package>
-            <package>glibc-locale</package>
-            <package>grub2-branding-openSUSE</package>
-            <package>grub2</package>
             <package>iproute2</package>
-            <package>iputils</package>
-            <package>kernel-default-devel</package>
-            <package>kernel-default</package>
-            <package>make</package>
             <package>openssh</package>
             <package>python3-devel</package>
             <package>python3</package>
             <package>sudo</package>
             <package>wget</package>
-            <package>yast2-firstboot</package>
-            <package>yast2</package>
             <package>zypper</package>
         </packages>
         <products config:type="list">
