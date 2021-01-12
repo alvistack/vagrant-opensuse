@@ -132,8 +132,8 @@ exit 0
             <package>curl</package>
             <package>iproute2</package>
             <package>openssh</package>
-            <package>python3-devel</package>
             <package>python3</package>
+            <package>rsync</package>
             <package>sudo</package>
             <package>wget</package>
             <package>zypper</package>
