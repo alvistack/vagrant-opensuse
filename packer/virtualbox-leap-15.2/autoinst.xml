@@ -54,35 +54,33 @@
     </networking>
     <partitioning config:type="list">
         <drive>
+            <use>all</use>
+            <type config:type="symbol">CT_DISK</type>
+            <disklabel>gpt</disklabel>
             <initialize config:type="boolean">true</initialize>
             <partitions config:type="list">
                 <partition>
-                    <create config:type="boolean">true</create>
+                    <size>512M</size>
+                    <filesystem config:type="symbol">ext4</filesystem>
+                    <format config:type="boolean">true</format>
+                    <mount>/boot</mount>
+                    <mountby config:type="symbol">uuid</mountby>
+                </partition>
+                <partition>
+                    <size>4096M</size>
                     <filesystem config:type="symbol">swap</filesystem>
                     <format config:type="boolean">true</format>
                     <mount>swap</mount>
                     <mountby config:type="symbol">uuid</mountby>
-                    <partition_id config:type="integer">130</partition_id>
-                    <partition_nr config:type="integer">1</partition_nr>
-                    <partition_type>primary</partition_type>
-                    <resize config:type="boolean">false</resize>
-                    <size>4096M</size>
                 </partition>
                 <partition>
-                    <create config:type="boolean">true</create>
+                    <size>max</size>
                     <filesystem config:type="symbol">ext4</filesystem>
                     <format config:type="boolean">true</format>
                     <mount>/</mount>
                     <mountby config:type="symbol">uuid</mountby>
-                    <partition_id config:type="integer">131</partition_id>
-                    <partition_nr config:type="integer">2</partition_nr>
-                    <partition_type>primary</partition_type>
-                    <resize config:type="boolean">false</resize>
-                    <size>max</size>
                 </partition>
             </partitions>
-            <type config:type="symbol">CT_DISK</type>
-            <use>all</use>
         </drive>
     </partitioning>
     <scripts>
