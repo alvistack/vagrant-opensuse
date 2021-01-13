@@ -58,6 +58,8 @@
             <initialize t="boolean">true</initialize>
             <partitions t="list">
                 <partition t="map">
+                    <create t="boolean">true</create>
+                    <partition_nr t="integer">1</partition_nr>
                     <size>512M</size>
                     <filesystem t="symbol">ext4</filesystem>
                     <format t="boolean">true</format>
@@ -65,6 +67,8 @@
                     <mountby t="symbol">uuid</mountby>
                 </partition>
                 <partition t="map">
+                    <create t="boolean">true</create>
+                    <partition_nr t="integer">2</partition_nr>
                     <size>4096M</size>
                     <filesystem t="symbol">swap</filesystem>
                     <format t="boolean">true</format>
@@ -72,6 +76,8 @@
                     <mountby t="symbol">uuid</mountby>
                 </partition>
                 <partition t="map">
+                    <create t="boolean">true</create>
+                    <partition_nr t="integer">3</partition_nr>
                     <size>max</size>
                     <filesystem t="symbol">ext4</filesystem>
                     <format t="boolean">true</format>

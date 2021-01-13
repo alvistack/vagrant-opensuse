@@ -60,6 +60,8 @@
             <initialize config:type="boolean">true</initialize>
             <partitions config:type="list">
                 <partition>
+                    <create config:type="boolean">true</create>
+                    <partition_nr config:type="integer">1</partition_nr>
                     <size>512M</size>
                     <filesystem config:type="symbol">ext4</filesystem>
                     <format config:type="boolean">true</format>
@@ -67,6 +69,8 @@
                     <mountby config:type="symbol">uuid</mountby>
                 </partition>
                 <partition>
+                    <create config:type="boolean">true</create>
+                    <partition_nr config:type="integer">2</partition_nr>
                     <size>4096M</size>
                     <filesystem config:type="symbol">swap</filesystem>
                     <format config:type="boolean">true</format>
@@ -74,6 +78,8 @@
                     <mountby config:type="symbol">uuid</mountby>
                 </partition>
                 <partition>
+                    <create config:type="boolean">true</create>
+                    <partition_nr config:type="integer">3</partition_nr>
                     <size>max</size>
                     <filesystem config:type="symbol">ext4</filesystem>
                     <format config:type="boolean">true</format>
