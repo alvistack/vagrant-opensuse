@@ -11,12 +11,12 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Boxes and Respective Packer Template Links
 
-  - [`alvistack/opensuse-leap-15.2`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.2)
-      - [`packer/libvirt-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.2/packer.json)
-      - [`packer/virtualbox-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.2/packer.json)
   - [`alvistack/opensuse-tumbleweed`](https://app.vagrantup.com/alvistack/boxes/opensuse-tumbleweed)
       - [`packer/libvirt-tumbleweed/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-tumbleweed/packer.json)
       - [`packer/virtualbox-tumbleweed/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-tumbleweed/packer.json)
+  - [`alvistack/opensuse-leap-15.2`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.2)
+      - [`packer/libvirt-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.2/packer.json)
+      - [`packer/virtualbox-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.2/packer.json)
 
 ## Overview
 
