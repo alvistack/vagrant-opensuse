@@ -1,78 +1,58 @@
 # Vagrant Box Packaging for openSUSE
 
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/vagrant-opensuse/master)](https://gitlab.com/alvistack/vagrant-opensuse/-/pipelines)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/vagrant-opensuse/master)](https://gitlab.com/alvistack/vagrant-opensuse/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/blob/master/LICENSE)
-[![Vagrant Box download](https://img.shields.io/vagrant/pulls/alvistack/opensuse.svg)](https://hub.vagrant.com/r/alvistack/opensuse/)
+[![Vagrant Box download](https://img.shields.io/badge/dynamic/json?label=alvistack%2Fopensuse-leap-15.2&query=%24.boxes%5B%3A1%5D.downloads&url=https%3A%2F%2Fapp.vagrantup.com%2Fapi%2Fv1%2Fsearch%3Fq%3Dalvistack%2Fopensuse-leap-15.2)](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.2)
 
-GitLab is a complete DevOps platform, delivered as a single application. This makes GitLab unique and makes Concurrent DevOps possible, unlocking your organization from the constraints of a pieced together toolchain. Join us for a live Q\&A to learn how GitLab can give you unmatched visibility and higher levels of efficiency in a single application across the DevOps lifecycle.
+openSUSE, formerly SUSE Linux, is a Linux distribution sponsored by SUSE Software Solutions Germany GmbH (formerly SUSE Linux GmbH) and other companies. Its "Leap" variant shares a common code base with, and is a direct upgradable installation for the commercially-produced SUSE Linux Enterprise, effectively making openSUSE Leap a non-commercial version of the enterprise product. It is widely used throughout the world. The focus of its development is creating usable open-source tools for software developers and system administrators, while providing a user-friendly desktop and feature-rich server environment.
 
-Learn more about GitLab: <https://about.gitlab.com/>
+Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Boxes and Respective Packer Template Links
 
-  - [`alvistack/opensuse-13.7`](https://app.vagrantup.com/alvistack/boxes/opensuse-13.7)
-      - [`libvirt`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-13.7/packer.json)
-      - [`virtualbox`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-13.7/packer.json)
-  - [`alvistack/opensuse-13.6`](https://app.vagrantup.com/alvistack/boxes/opensuse-13.6)
-      - [`libvirt`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-13.6/packer.json)
-      - [`virtualbox`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-13.6/packer.json)
+  - [`alvistack/opensuse-tumbleweed`](https://app.vagrantup.com/alvistack/boxes/opensuse-tumbleweed)
+      - [`packer/libvirt-tumbleweed/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-tumbleweed/packer.json)
+      - [`packer/virtualbox-tumbleweed/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-tumbleweed/packer.json)
+  - [`alvistack/opensuse-leap-15.2`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.2)
+      - [`packer/libvirt-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.2/packer.json)
+      - [`packer/virtualbox-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.2/packer.json)
 
 ## Overview
 
-This Docker container makes it easy to get an instance of openSUSE up and running.
-
-Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
-
-  - Packaging by Packer Docker builder and Ansible provisioner in single layer
-  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
+  - Packaging with [Packer](https://www.packer.io/)
+  - Minimal [Vagrant base box implementation](https://www.vagrantup.com/docs/boxes/base)
+  - Support [Vagrant synced folder with rsync](https://www.vagrantup.com/docs/synced-folders/rsync)
+  - Support [Vagrant provisioner with Ansible](https://www.vagrantup.com/docs/provisioning/ansible)
+  - Standardize disk partition with GPT
+  - Standardize file system mount with UUID
+  - Standardize network interface with `eth0`
 
 ### Quick Start
 
-For the `VOLUME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version \>= 1.9.
+Once you have [Vagrant](https://www.vagrantup.com/docs/installation) and [VirtaulBox](https://www.virtualbox.org/) installed, run the following commands under your [project directory](https://learn.hashicorp.com/tutorials/vagrant/getting-started-project-setup?in=vagrant/getting-started):
 
-Start openSUSE:
-
-    # Pull latest image
-    docker pull alvistack/opensuse
+    # Initialize Vagrant
+    vagrant init alvistack/opensuse-leap-15.2
     
-    # Run as detach
-    docker run \
-        -itd \
-        --name opensuse \
-        --volume /etc/opensuse:/etc/opensuse \
-        --volume /var/run/docker.sock:/var/run/docker.sock \
-        alvistack/opensuse
-
-**Success**. openSUSE is now available.
-
-## Upgrade
-
-To upgrade to a more recent version of openSUSE you can simply stop the openSUSE
-container and start a new one based on a more recent image:
-
-    docker stop opensuse
-    docker rm opensuse
-    docker run ... (see above)
-
-As your data is stored in the data volume directory on the host, it will still
-be available after the upgrade.
-
-Note: Please make sure that you don't accidentally remove the opensuse container and its volumes using the -v option.
-
-## Backup
-
-For evaluations you can use the built-in database that will store its files in the openSUSE home directory. In that case it is sufficient to create a backup archive of the directory on the host that is used as a volume (`/var/opt/gitlab` in the example above).
+    # Start the virtual machine
+    vagrant up
+    
+    # SSH into this machine
+    vagrant ssh
+    
+    # Terminate the virtual machine
+    vagrant destroy --force
 
 ## Versioning
 
-### `alvistack/opensuse:latest`
+### `alvistack/opensuse-leap-15.2:YYYYMMDD.Y.Z`
 
-The `latest` tag matches the most recent [GitHub Release](https://github.com/alvistack/vagrant-opensuse/releases) of this repository. Thus using `alvistack/opensuse:latest` or `alvistack/opensuse` will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/vagrant-opensuse/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
-### `alvistack/opensuse:<version>`
+### `alvistack/opensuse-leap-15.2:YYYYMMDD.0.0`
 
-The version tags are rolling release rebuild by [Travis](https://travis-ci.com/alvistack/vagrant-opensuse) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
+Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](https://gitlab.com/alvistack/vagrant-opensuse/-/pipelines) in weekly basis. Thus using these tags will ensure you are running the latest packages provided by the base image project.
 
 ## License
 
