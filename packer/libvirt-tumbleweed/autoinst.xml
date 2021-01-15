@@ -133,13 +133,16 @@ exit 0
         <packages t="list">
             <package>ca-certificates</package>
             <package>curl</package>
+            <package>gcc</package>
             <package>iproute2</package>
+            <package>kernel-default</package>
+            <package>kernel-source</package>
+            <package>make</package>
             <package>openssh</package>
+            <package>perl</package>
             <package>python38</package>
             <package>rsync</package>
             <package>sudo</package>
-            <package>wget</package>
-            <package>zypper</package>
         </packages>
         <products t="list">
             <product>openSUSE</product>
