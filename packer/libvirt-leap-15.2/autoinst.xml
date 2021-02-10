@@ -135,7 +135,9 @@ exit 0
         <packages config:type="list">
             <package>ca-certificates</package>
             <package>curl</package>
+            <package>e2fsprogs</package>
             <package>gcc</package>
+            <package>growpart</package>
             <package>iproute2</package>
             <package>make</package>
             <package>openssh</package>
