@@ -128,7 +128,7 @@ exit 0
         </services>
     </services-manager>
     <software t="map">
-        <instsource>https://download.opensuse.org/tumbleweed/repo/oss/</instsource>
+        <instsource>http://download.opensuse.org/tumbleweed/repo/oss/</instsource>
         <do_online_update t="boolean">false</do_online_update>
         <packages t="list">
             <package>ca-certificates</package>
