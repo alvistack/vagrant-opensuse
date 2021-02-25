@@ -4,7 +4,7 @@
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp net.ifnames=0 biosdevname=0 lang=en_US textmode=1 ",
-        "install=http://download.opensuse.org/tumbleweed/repo/oss/ ",
+        "install=cdrom:/dev/sr0 ",
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml ",
         "<enter><wait>"
       ],
@@ -15,7 +15,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "none",
-      "iso_url": "http://ftp.riken.jp/Linux/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+      "iso_url": "http://ftp.riken.jp/Linux/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
       "memory": 4096,
       "ssh_password": "vagrant",
       "ssh_port": 22,
