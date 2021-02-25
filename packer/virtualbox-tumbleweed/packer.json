@@ -15,7 +15,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "none",
-      "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+      "iso_url": "http://nrt.edge.kernel.org/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
       "memory": 4096,
       "ssh_password": "vagrant",
       "ssh_port": 22,
