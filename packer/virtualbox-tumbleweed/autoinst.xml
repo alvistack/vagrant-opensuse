@@ -1,6 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE profile>
 <profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+    <add-on t="map">
+        <add_on_others t="list">
+            <listentry t="map">
+                <media_url>http://download.opensuse.org/tumbleweed/repo/oss/</media_url>
+                <name>repo-oss</name>
+            </listentry>
+            <listentry t="map">
+                <media_url>http://download.opensuse.org/tumbleweed/repo/non-oss/</media_url>
+                <name>repo-non-oss</name>
+            </listentry>
+            <listentry t="map">
+                <media_url>http://download.opensuse.org/update/tumbleweed/</media_url>
+                <name>repo-update</name>
+            </listentry>
+        </add_on_others>
+    </add-on>
     <bootloader t="map">
         <loader_type>grub2</loader_type>
         <global t="map">
@@ -128,7 +144,6 @@ exit 0
         </services>
     </services-manager>
     <software t="map">
-        <instsource>http://download.opensuse.org/tumbleweed/repo/oss/</instsource>
         <do_online_update t="boolean">false</do_online_update>
         <packages t="list">
             <package>ca-certificates</package>
