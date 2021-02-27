@@ -5,7 +5,7 @@
       "boot_command": [
         "<esc><enter><wait>",
         "linux netsetup=dhcp net.ifnames=0 biosdevname=0 lang=en_US textmode=1 ",
-        "install=http://download.opensuse.org/distribution/leap/15.2/repo/oss/ ",
+        "install=cdrom:/dev/sr0 ",
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml ",
         "<enter><wait>"
       ],
@@ -19,8 +19,8 @@
       "format": "qcow2",
       "headless": true,
       "http_directory": "./",
-      "iso_checksum": "sha256:02a77812443dd3e47c36611c8837bf8d1659aea6b4d16c9db6841c564d59b7af",
-      "iso_url": "http://nrt.edge.kernel.org/opensuse/distribution/leap/15.2/iso/openSUSE-Leap-15.2-NET-x86_64.iso",
+      "iso_checksum": "sha256:0fd2d4e630b6579b933b5cb4930a8100acca6b4e29cd2738c4b7a9b2f76d80e4",
+      "iso_url": "http://ftp.kaist.ac.kr/pub/opensuse/distribution/leap/15.2/iso/openSUSE-Leap-15.2-DVD-x86_64.iso",
       "memory": 4096,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
