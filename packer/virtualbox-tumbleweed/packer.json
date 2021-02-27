@@ -17,6 +17,7 @@
       "iso_checksum": "none",
       "iso_url": "http://ftp.kaist.ac.kr/pub/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
       "memory": 4096,
+      "shutdown_command": "sudo shutdown -h now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_timeout": "3600s",
