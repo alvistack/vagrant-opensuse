@@ -13,11 +13,11 @@
             </listentry>
             <listentry>
                 <media_url>http://download.opensuse.org/update/leap/15.2/oss/</media_url>
-                <name>repo-update-oss</name>
+                <name>update-oss</name>
             </listentry>
             <listentry>
                 <media_url>http://download.opensuse.org/update/leap/15.2/non-oss/</media_url>
-                <name>repo-update-non-oss</name>
+                <name>update-non-oss</name>
             </listentry>
         </add_on_others>
     </add-on>
