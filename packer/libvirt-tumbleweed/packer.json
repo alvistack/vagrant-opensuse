@@ -20,7 +20,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "none",
-      "iso_url": "http://ftp.kaist.ac.kr/pub/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
+      "iso_url": "http://opensuse.ucom.am/tumbleweed/iso/openSUSE-Tumbleweed-DVD-x86_64-Current.iso",
       "memory": 4096,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
