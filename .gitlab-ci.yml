@@ -149,7 +149,7 @@ build:libvirt-leap-15.2:
   cache:
     key: "$CI_PIPELINE_ID-libvirt-leap-15.2"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
   variables:
     _PACKER_BUILDER_PROVIDER: "libvirt"
     _PACKER_BUILDER_VERSION: "leap-15.2"
@@ -160,7 +160,7 @@ deploy:libvirt-leap-15.2:
   cache:
     key: "$CI_PIPELINE_ID-libvirt-leap-15.2"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
     policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "libvirt"
@@ -174,7 +174,7 @@ build:libvirt-tumbleweed:
   cache:
     key: "$CI_PIPELINE_ID-libvirt-tumbleweed"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
   variables:
     _PACKER_BUILDER_PROVIDER: "libvirt"
     _PACKER_BUILDER_VERSION: "tumbleweed"
@@ -185,7 +185,7 @@ deploy:libvirt-tumbleweed:
   cache:
     key: "$CI_PIPELINE_ID-libvirt-tumbleweed"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
     policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "libvirt"
@@ -199,7 +199,7 @@ build:virtualbox-leap-15.2:
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
   variables:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
     _PACKER_BUILDER_VERSION: "leap-15.2"
@@ -210,7 +210,7 @@ deploy:virtualbox-leap-15.2:
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
     policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
@@ -224,7 +224,7 @@ build:virtualbox-tumbleweed:
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-tumbleweed"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
   variables:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
     _PACKER_BUILDER_VERSION: "tumbleweed"
@@ -235,7 +235,7 @@ deploy:virtualbox-tumbleweed:
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-tumbleweed"
     paths:
-      - packer/*/output-vagrant/*.box
+      - packer/*/output-vagrant
     policy: pull
   variables:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
