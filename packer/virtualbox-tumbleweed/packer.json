@@ -14,7 +14,7 @@
       "guest_os_type": "OpenSUSE_64",
       "headless": true,
       "http_directory": "./",
-      "iso_checksum": "sha256:306a47e7dbd495a6090cc62df9206dc8b9a5a40e822679b724745b1627142143",
+      "iso_checksum": "sha256:08d97b9e7f2515afe81d4a20cfadde790752d5872fef3981c9e6ba542c1619ea",
       "iso_url": "http://opensuse.ucom.am/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20210417-Media.iso",
       "memory": 4096,
       "shutdown_command": "sudo shutdown -h now",
