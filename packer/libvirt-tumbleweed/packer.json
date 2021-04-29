@@ -19,7 +19,7 @@
       "format": "qcow2",
       "headless": true,
       "http_directory": "./",
-      "iso_checksum": "40c7ad3eed3545cf28d15706b5010b22a983a6af9eeefd6f578cfcb1cb978092",
+      "iso_checksum": "d75f6c4cf38241c0525f44de7f314d9640bde1f2d1a802f298c8bce630a69083",
       "iso_url": "http://opensuse.ucom.am/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20210427-Media.iso",
       "memory": 4096,
       "net_device": "virtio-net",
