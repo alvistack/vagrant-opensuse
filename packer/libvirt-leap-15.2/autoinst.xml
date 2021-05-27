@@ -153,6 +153,7 @@ exit 0
         <do_online_update config:type="boolean">false</do_online_update>
         <packages config:type="list">
             <package>ca-certificates</package>
+            <package>cloud-init</package>
             <package>curl</package>
             <package>e2fsprogs</package>
             <package>gcc</package>
