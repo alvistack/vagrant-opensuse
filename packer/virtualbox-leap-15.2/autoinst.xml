@@ -159,6 +159,8 @@ exit 0
             <package>gcc</package>
             <package>growpart</package>
             <package>iproute2</package>
+            <package>kernel-default</package>
+            <package>kernel-source</package>
             <package>make</package>
             <package>openssh</package>
             <package>perl</package>
