@@ -12,7 +12,7 @@
         "<esc><esc><esc><esc><esc><esc><esc><esc><esc><esc><wait>",
         "<esc><esc><esc><esc><esc><esc><esc><esc><esc><esc><wait>",
         "<esc><esc><esc><esc><esc><esc><esc><esc><esc><esc><wait>",
-        "<enter>",
+        "<esc><enter><wait5>",
         "linux netsetup=dhcp net.ifnames=0 biosdevname=0 lang=en_US textmode=1<wait5> ",
         "install=http://download.opensuse.org/distribution/leap/15.2/repo/oss<wait5> ",
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml<wait5> ",
