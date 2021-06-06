@@ -21,13 +21,6 @@
             </listentry>
         </add_on_others>
     </add-on>
-    <bootloader t="map">
-        <loader_type>grub2</loader_type>
-        <global t="map">
-            <append>net.ifnames=0 biosdevname=0</append>
-            <timeout t="integer">10</timeout>
-        </global>
-    </bootloader>
     <firewall t="map">
         <enable_firewall t="boolean">false</enable_firewall>
         <start_firewall t="boolean">false</start_firewall>
