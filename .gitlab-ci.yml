@@ -168,31 +168,6 @@ default:
   before_script:
     - *script-git-submodule
 
-build:libvirt-leap-15.2:
-  <<: *job-packer-build
-  stage: build
-  cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.2"
-    paths:
-      - packer/*/output-vagrant
-  variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.2"
-
-deploy:libvirt-leap-15.2:
-  <<: *job-vagrant-cloud-provider-upload
-  stage: deploy
-  cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.2"
-    paths:
-      - packer/*/output-vagrant
-    policy: pull
-  variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.2"
-  needs:
-    - build:libvirt-leap-15.2
-
 build:libvirt-tumbleweed:
   <<: *job-packer-build
   stage: build
@@ -218,30 +193,55 @@ deploy:libvirt-tumbleweed:
   needs:
     - build:libvirt-tumbleweed
 
-build:virtualbox-leap-15.2:
+build:libvirt-leap-15.3:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
+    key: "$CI_PIPELINE_ID-libvirt-leap-15.3"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.2"
+    _PACKER_BUILDER_PROVIDER: "libvirt"
+    _PACKER_BUILDER_VERSION: "leap-15.3"
 
-deploy:virtualbox-leap-15.2:
+deploy:libvirt-leap-15.3:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
+    key: "$CI_PIPELINE_ID-libvirt-leap-15.3"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
+    _PACKER_BUILDER_PROVIDER: "libvirt"
+    _PACKER_BUILDER_VERSION: "leap-15.3"
+  needs:
+    - build:libvirt-leap-15.3
+
+build:libvirt-leap-15.2:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: "$CI_PIPELINE_ID-libvirt-leap-15.2"
+    paths:
+      - packer/*/output-vagrant
+  variables:
+    _PACKER_BUILDER_PROVIDER: "libvirt"
+    _PACKER_BUILDER_VERSION: "leap-15.2"
+
+deploy:libvirt-leap-15.2:
+  <<: *job-vagrant-cloud-provider-upload
+  stage: deploy
+  cache:
+    key: "$CI_PIPELINE_ID-libvirt-leap-15.2"
+    paths:
+      - packer/*/output-vagrant
+    policy: pull
+  variables:
+    _PACKER_BUILDER_PROVIDER: "libvirt"
     _PACKER_BUILDER_VERSION: "leap-15.2"
   needs:
-    - build:virtualbox-leap-15.2
+    - build:libvirt-leap-15.2
 
 build:virtualbox-tumbleweed:
   <<: *job-packer-build
@@ -267,3 +267,53 @@ deploy:virtualbox-tumbleweed:
     _PACKER_BUILDER_VERSION: "tumbleweed"
   needs:
     - build:virtualbox-tumbleweed
+
+build:virtualbox-leap-15.3:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: "$CI_PIPELINE_ID-virtualbox-leap-15.3"
+    paths:
+      - packer/*/output-vagrant
+  variables:
+    _PACKER_BUILDER_PROVIDER: "virtualbox"
+    _PACKER_BUILDER_VERSION: "leap-15.3"
+
+deploy:virtualbox-leap-15.3:
+  <<: *job-vagrant-cloud-provider-upload
+  stage: deploy
+  cache:
+    key: "$CI_PIPELINE_ID-virtualbox-leap-15.3"
+    paths:
+      - packer/*/output-vagrant
+    policy: pull
+  variables:
+    _PACKER_BUILDER_PROVIDER: "virtualbox"
+    _PACKER_BUILDER_VERSION: "leap-15.3"
+  needs:
+    - build:virtualbox-leap-15.3
+
+build:virtualbox-leap-15.2:
+  <<: *job-packer-build
+  stage: build
+  cache:
+    key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
+    paths:
+      - packer/*/output-vagrant
+  variables:
+    _PACKER_BUILDER_PROVIDER: "virtualbox"
+    _PACKER_BUILDER_VERSION: "leap-15.2"
+
+deploy:virtualbox-leap-15.2:
+  <<: *job-vagrant-cloud-provider-upload
+  stage: deploy
+  cache:
+    key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
+    paths:
+      - packer/*/output-vagrant
+    policy: pull
+  variables:
+    _PACKER_BUILDER_PROVIDER: "virtualbox"
+    _PACKER_BUILDER_VERSION: "leap-15.2"
+  needs:
+    - build:virtualbox-leap-15.2

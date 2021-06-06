@@ -21,15 +21,6 @@
             </listentry>
         </add_on_others>
     </add-on>
-    <bootloader>
-        <loader_type>grub2</loader_type>
-        <global>
-            <activate config:type="boolean">true</activate>
-            <append>net.ifnames=0 biosdevname=0</append>
-            <timeout config:type="integer">10</timeout>
-            <boot_mbr>true</boot_mbr>
-        </global>
-    </bootloader>
     <firewall>
         <enable_firewall config:type="boolean">false</enable_firewall>
         <start_firewall config:type="boolean">false</start_firewall>

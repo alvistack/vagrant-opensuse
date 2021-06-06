@@ -30,7 +30,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "02a77812443dd3e47c36611c8837bf8d1659aea6b4d16c9db6841c564d59b7af",
-      "iso_url": "http://opensuse.ucom.am/distribution/leap/15.2/iso/openSUSE-Leap-15.2-NET-x86_64.iso",
+      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/openSUSE/distribution/leap/15.2/iso/openSUSE-Leap-15.2-NET-x86_64.iso",
       "memory": 4096,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
