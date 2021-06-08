@@ -31,7 +31,7 @@
       "http_directory": "./",
       "iso_checksum": "54fb3a488e0fececf45cdaeefaccfb64437745da4b1ca444662e3aac20cf37b5",
       "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/openSUSE/distribution/leap/15.3/iso/openSUSE-Leap-15.3-NET-x86_64.iso",
-      "memory": 4096,
+      "memory": 8192,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
       "shutdown_command": "sudo shutdown -h now",
