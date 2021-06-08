@@ -26,7 +26,7 @@
       "http_directory": "./",
       "iso_checksum": "b32acd932ca91a759c11de5be0c735f256e23d8189cb610543da94bf76d8bf0c",
       "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20210606-Media.iso",
-      "memory": 4096,
+      "memory": 8192,
       "shutdown_command": "sudo shutdown -h now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
