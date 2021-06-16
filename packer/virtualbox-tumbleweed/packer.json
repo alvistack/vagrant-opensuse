@@ -18,7 +18,7 @@
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml <wait5>",
         "<enter>"
       ],
-      "boot_wait": "3s",
+      "boot_wait": "1s",
       "cpus": 2,
       "disk_size": 131072,
       "guest_os_type": "OpenSUSE_64",

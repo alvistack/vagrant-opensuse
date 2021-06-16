@@ -19,7 +19,7 @@
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml <wait5>",
         "<enter>"
       ],
-      "boot_wait": "3s",
+      "boot_wait": "1s",
       "cpus": 2,
       "disk_cache": "writeback",
       "disk_compression": true,
