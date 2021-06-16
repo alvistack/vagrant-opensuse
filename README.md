@@ -4,7 +4,9 @@
 [![GitHub release](https://img.shields.io/github/release/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/blob/master/LICENSE)
 [![Vagrant Box download](https://img.shields.io/badge/dynamic/json?label=alvistack%2Fopensuse-leap-15.3&query=%24.boxes%5B%3A1%5D.downloads&url=https%3A%2F%2Fapp.vagrantup.com%2Fapi%2Fv1%2Fsearch%3Fq%3Dalvistack%2Fopensuse-leap-15.3)](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.3)
+
 openSUSE, formerly SUSE Linux, is a Linux distribution sponsored by SUSE Software Solutions Germany GmbH (formerly SUSE Linux GmbH) and other companies. Its "Leap" variant shares a common code base with, and is a direct upgradable installation for the commercially-produced SUSE Linux Enterprise, effectively making openSUSE Leap a non-commercial version of the enterprise product. It is widely used throughout the world. The focus of its development is creating usable open-source tools for software developers and system administrators, while providing a user-friendly desktop and feature-rich server environment.
+
 Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Boxes and Respective Packer Template Links
@@ -34,14 +36,18 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 ### Quick Start
 
 Once you have [Vagrant](https://www.vagrantup.com/docs/installation) and [VirtaulBox](https://www.virtualbox.org/) installed, run the following commands under your [project directory](https://learn.hashicorp.com/tutorials/vagrant/getting-started-project-setup?in=vagrant/getting-started):
-\# Initialize Vagrant
-vagrant init alvistack/opensuse-leap-15.3
-\# Start the virtual machine
-vagrant up
-\# SSH into this machine
-vagrant ssh
-\# Terminate the virtual machine
-vagrant destroy --force
+
+    # Initialize Vagrant
+    vagrant init alvistack/opensuse-leap-15.3
+    
+    # Start the virtual machine
+    vagrant up
+    
+    # SSH into this machine
+    vagrant ssh
+    
+    # Terminate the virtual machine
+    vagrant destroy --force
 
 ## Versioning
 
