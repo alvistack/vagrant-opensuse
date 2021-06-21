@@ -243,9 +243,9 @@ deploy:libvirt-leap-15.2:
   needs:
     - build:libvirt-leap-15.2
 
-build:virtualbox-tumbleweed:
+test:virtualbox-tumbleweed:
   <<: *job-packer-build
-  stage: build
+  stage: test
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-tumbleweed"
     paths:
@@ -266,11 +266,11 @@ deploy:virtualbox-tumbleweed:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
     _PACKER_BUILDER_VERSION: "tumbleweed"
   needs:
-    - build:virtualbox-tumbleweed
+    - test:virtualbox-tumbleweed
 
-build:virtualbox-leap-15.3:
+test:virtualbox-leap-15.3:
   <<: *job-packer-build
-  stage: build
+  stage: test
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-leap-15.3"
     paths:
@@ -291,11 +291,11 @@ deploy:virtualbox-leap-15.3:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
     _PACKER_BUILDER_VERSION: "leap-15.3"
   needs:
-    - build:virtualbox-leap-15.3
+    - test:virtualbox-leap-15.3
 
-build:virtualbox-leap-15.2:
+test:virtualbox-leap-15.2:
   <<: *job-packer-build
-  stage: build
+  stage: test
   cache:
     key: "$CI_PIPELINE_ID-virtualbox-leap-15.2"
     paths:
@@ -316,4 +316,4 @@ deploy:virtualbox-leap-15.2:
     _PACKER_BUILDER_PROVIDER: "virtualbox"
     _PACKER_BUILDER_VERSION: "leap-15.2"
   needs:
-    - build:virtualbox-leap-15.2
+    - test:virtualbox-leap-15.2
