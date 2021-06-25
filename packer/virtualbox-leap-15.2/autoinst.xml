@@ -82,7 +82,7 @@
                 <partition>
                     <create config:type="boolean">true</create>
                     <partition_nr config:type="integer">2</partition_nr>
-                    <size>4096M</size>
+                    <size>8192M</size>
                     <filesystem config:type="symbol">swap</filesystem>
                     <format config:type="boolean">true</format>
                     <mount>swap</mount>
