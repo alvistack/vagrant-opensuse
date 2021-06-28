@@ -30,7 +30,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "0deae0b74953acd951150ae9567e098d450f2ae91b2d0c0a610b9d934f91c7b1",
-      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/openSUSE/distribution/leap/15.3/iso/openSUSE-Leap-15.3-DVD-x86_64.iso",
+      "iso_url": "http://ftp.riken.jp/Linux/opensuse/distribution/leap/15.3/iso/openSUSE-Leap-15.3-DVD-x86_64.iso",
       "memory": 8192,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",

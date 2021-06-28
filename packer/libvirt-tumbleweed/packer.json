@@ -30,7 +30,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "08793bcbe87fddaf9d10b7b683c72a262835e5d5949545f137b3ac3591a09041",
-      "iso_url": "http://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20210626-Media.iso",
+      "iso_url": "http://ftp.riken.jp/Linux/opensuse/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Snapshot20210626-Media.iso",
       "memory": 8192,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
