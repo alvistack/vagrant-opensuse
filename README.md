@@ -1,5 +1,7 @@
 # Vagrant Box Packaging for openSUSE
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/vagrant-opensuse/master)](https://gitlab.com/alvistack/vagrant-opensuse/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/blob/master/LICENSE)
