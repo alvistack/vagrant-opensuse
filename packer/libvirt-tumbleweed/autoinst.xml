@@ -4,20 +4,20 @@
     <add-on t="map">
         <add_on_others t="list">
             <listentry t="map">
-                <media_url>http://download.opensuse.org/tumbleweed/repo/oss</media_url>
+                <media_url>http://download.opensuse.org/tumbleweed/repo/oss/</media_url>
                 <name>repo-oss</name>
             </listentry>
             <listentry t="map">
-                <media_url>http://download.opensuse.org/tumbleweed/repo/non-oss</media_url>
+                <media_url>http://download.opensuse.org/tumbleweed/repo/non-oss/</media_url>
                 <name>repo-non-oss</name>
             </listentry>
             <listentry t="map">
-                <media_url>http://download.opensuse.org/update/tumbleweed</media_url>
-                <name>update-oss</name>
+                <media_url>http://download.opensuse.org/update/tumbleweed/</media_url>
+                <name>repo-update</name>
             </listentry>
             <listentry t="map">
-                <media_url>http://download.opensuse.org/update/tumbleweed-non-oss</media_url>
-                <name>update-non-oss</name>
+                <media_url>http://download.opensuse.org/update/tumbleweed-non-oss/</media_url>
+                <name>repo-update-non-oss</name>
             </listentry>
         </add_on_others>
     </add-on>
