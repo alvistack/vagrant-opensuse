@@ -165,7 +165,6 @@ exit 0
             <product>openSUSE</product>
         </products>
         <remove-packages config:type="list">
-            <package>qemu-guest-agent</package>
             <package>virtualbox-guest-tools</package>
             <package>virtualbox-kmp-default</package>
         </remove-packages>
