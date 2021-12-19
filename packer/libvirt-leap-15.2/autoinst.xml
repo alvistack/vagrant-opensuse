@@ -143,6 +143,7 @@ exit 0
     </services-manager>
     <software>
         <do_online_update config:type="boolean">false</do_online_update>
+        <install_recommended config:type="boolean">false</install_recommended>
         <packages config:type="list">
             <package>ca-certificates</package>
             <package>cloud-init</package>
@@ -163,6 +164,11 @@ exit 0
         <products config:type="list">
             <product>openSUSE</product>
         </products>
+        <remove-packages config:type="list">
+            <package>qemu-guest-agent</package>
+            <package>virtualbox-guest-tools</package>
+            <package>virtualbox-kmp-default</package>
+        </remove-packages>
     </software>
     <timezone>
         <hwclock>UTC</hwclock>
