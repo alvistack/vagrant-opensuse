@@ -143,6 +143,7 @@ exit 0
     </services-manager>
     <software t="map">
         <do_online_update t="boolean">false</do_online_update>
+        <install_recommended t="boolean">false</install_recommended>
         <packages t="list">
             <package>ca-certificates</package>
             <package>cloud-init</package>
@@ -163,6 +164,10 @@ exit 0
         <products t="list">
             <product>openSUSE</product>
         </products>
+        <remove-packages t="list">
+            <package>virtualbox-guest-tools</package>
+            <package>virtualbox-kmp-default</package>
+        </remove-packages>
     </software>
     <timezone t="map">
         <hwclock>UTC</hwclock>
