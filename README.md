@@ -3,7 +3,7 @@
 <img src="/alvistack.svg" width="75" alt="AlviStack">
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/vagrant-opensuse/master)](https://gitlab.com/alvistack/vagrant-opensuse/-/pipelines)
-[![GitHub release](https://img.shields.io/github/release/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/releases)
+[![GitHub tag](https://img.shields.io/github/tag/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/tags)
 [![GitHub license](https://img.shields.io/github/license/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/blob/master/LICENSE)
 [![Vagrant Box download](https://img.shields.io/badge/dynamic/json?label=alvistack%2Fopensuse-leap-15.3&query=%24.boxes%5B%3A1%5D.downloads&url=https%3A%2F%2Fapp.vagrantup.com%2Fapi%2Fv1%2Fsearch%3Fq%3Dalvistack%2Fopensuse-leap-15.3)](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.3)
 
@@ -19,9 +19,6 @@ Learn more about openSUSE: <https://www.opensuse.org/>
   - [`alvistack/opensuse-leap-15.3`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.3)
       - [`packer/libvirt-leap-15.3/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.3/packer.json)
       - [`packer/virtualbox-leap-15.3/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.3/packer.json)
-  - [`alvistack/opensuse-leap-15.2`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.2)
-      - [`packer/libvirt-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.2/packer.json)
-      - [`packer/virtualbox-leap-15.2/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.2/packer.json)
 
 ## Overview
 
@@ -55,7 +52,7 @@ Once you have [Vagrant](https://www.vagrantup.com/docs/installation) and [Virtau
 
 ### `YYYYMMDD.Y.Z`
 
-Release tags could be find from [GitHub Release](https://github.com/alvistack/vagrant-opensuse/releases) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
+Release tags could be find from [GitHub Release](https://github.com/alvistack/vagrant-opensuse/tags) of this repository. Thus using these tags will ensure you are running the most up to date stable version of this image.
 
 ### `YYYYMMDD.0.0`
 
