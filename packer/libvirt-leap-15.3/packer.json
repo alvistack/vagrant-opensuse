@@ -30,7 +30,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "e377fff244d36c3a1a03092d6f14230fdae8bd116dff638a2b3a41d89d51390a",
-      "iso_url": "http://opensuse.ucom.am/distribution/leap/15.3/iso/openSUSE-Leap-15.3-2-DVD-x86_64-Build24.5-Media.iso",
+      "iso_url": "http://downloadcontent.opensuse.org/distribution/leap/15.3/iso/openSUSE-Leap-15.3-2-DVD-x86_64-Build24.5-Media.iso",
       "memory": 16384,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
