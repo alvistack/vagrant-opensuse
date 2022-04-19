@@ -166,6 +166,7 @@ exit 0
             <product>openSUSE</product>
         </products>
         <remove-packages t="list">
+            <package>sssd</package>
             <package>virtualbox-guest-tools</package>
             <package>virtualbox-kmp-default</package>
         </remove-packages>
