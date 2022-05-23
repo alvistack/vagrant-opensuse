@@ -15,7 +15,7 @@
         "<tab><tab><tab><tab><tab><tab><tab><tab><tab><tab><wait>",
         "<esc><wait5><enter><wait5>",
         "linux netsetup=dhcp net.ifnames=0 biosdevname=0 systemd.unified_cgroup_hierarchy=0 lang=en_US textmode=1 kexec=3 <wait5>",
-        "install=http://download.opensuse.org/tumbleweed/repo/oss <wait5>",
+        "install=http://downloadcontent.opensuse.org/tumbleweed/repo/oss <wait5>",
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml <wait5>",
         "<enter>"
       ],
