@@ -104,25 +104,22 @@
 .script-packer-build: &script-packer-build
   - |
     sudo -E vagrant cloud auth login --token $VAGRANT_CLOUD_TOKEN
-    cd $CI_PROJECT_DIR/packer/$_PACKER_BUILDER_PROVIDER-$_PACKER_BUILDER_VERSION
+    cd $CI_PROJECT_DIR/packer/$_BOX-$_PROVIDER
     sudo -E packer build packer.json
 
 .script-vagrant-box-add: &script-vagrant-box-add
   - |
     export _ORG="$CI_PROJECT_NAMESPACE"
-    export _BOX="$(echo $CI_PROJECT_NAME | sed "s/^vagrant-//g")-$_PACKER_BUILDER_VERSION"
-    export _PROVIDER="$_PACKER_BUILDER_PROVIDER"
     sudo -E umount /home/vagrant/.vagrant.d/boxes
     sudo -E vagrant box add \
       --name $_ORG/$_BOX \
       --provider $_PROVIDER \
-      $CI_PROJECT_DIR/packer/$_PACKER_BUILDER_PROVIDER-$_PACKER_BUILDER_VERSION/output-vagrant/package.box
+      $CI_PROJECT_DIR/packer/$_BOX-$_PROVIDER/output-vagrant/package.box
 
 .script-molecule-test: &script-molecule-test
   - |
-    export VAGRANT_EXPERIMENTAL="1"
     export _MOLECULE_INSTANCE_NAME="$(pwgen -1AB 12)"
-    sudo -E molecule test -s $_PACKER_BUILDER_PROVIDER-$_PACKER_BUILDER_VERSION
+    sudo -E molecule test -s $_BOX-$_PROVIDER
 
 .script-vagrant-cloud-provider-upload: &script-vagrant-cloud-provider-upload
   - |
@@ -134,10 +131,8 @@
       exit 0
     fi
     sudo -E vagrant cloud auth login --token $VAGRANT_CLOUD_TOKEN
-    cd $CI_PROJECT_DIR/packer/$_PACKER_BUILDER_PROVIDER-$_PACKER_BUILDER_VERSION
+    cd $CI_PROJECT_DIR/packer/$_BOX-$_PROVIDER
     export _ORG="$CI_PROJECT_NAMESPACE"
-    export _BOX="$(echo $CI_PROJECT_NAME | sed "s/^vagrant-//g")-$_PACKER_BUILDER_VERSION"
-    export _PROVIDER="$_PACKER_BUILDER_PROVIDER"
     export _CHECKSUM="$(sha256sum output-vagrant/package.box | awk '{ print $1 }')"
     curl -skL \
       --header "Content-Type: application/json" \
@@ -183,7 +178,7 @@
     - *script-linters
     - *script-packer-build
 
-.job-molecule: &job-molecule
+.job-molecule-test: &job-molecule-test
   script:
     - *script-bootstrap-python
     - *script-bootstrap-ansible
@@ -200,240 +195,240 @@
     - *script-vagrant-cloud-provider-upload
 
 default:
-  retry: 2
   before_script:
     - *script-git-submodule
+  retry: 2
 
-build:libvirt-tumbleweed:
+build:opensuse-tumbleweed-libvirt:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-tumbleweed"
+    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-libvirt"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "tumbleweed"
+    _BOX: "opensuse-tumbleweed"
+    _PROVIDER: "libvirt"
 
-test:libvirt-tumbleweed:
-  <<: *job-molecule
+test:opensuse-tumbleweed-libvirt:
+  <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-tumbleweed"
+    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-libvirt"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "tumbleweed"
+    _BOX: "opensuse-tumbleweed"
+    _PROVIDER: "libvirt"
   needs:
-    - build:libvirt-tumbleweed
+    - build:opensuse-tumbleweed-libvirt
 
-deploy:libvirt-tumbleweed:
+deploy:opensuse-tumbleweed-libvirt:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-tumbleweed"
+    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-libvirt"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "tumbleweed"
+    _BOX: "opensuse-tumbleweed"
+    _PROVIDER: "libvirt"
   needs:
-    - test:libvirt-tumbleweed
+    - test:opensuse-tumbleweed-libvirt
 
-build:libvirt-leap-15.4:
+build:opensuse-tumbleweed-virtualbox:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.4"
+    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-virtualbox"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.4"
+    _BOX: "opensuse-tumbleweed"
+    _PROVIDER: "virtualbox"
 
-test:libvirt-leap-15.4:
-  <<: *job-molecule
+test:opensuse-tumbleweed-virtualbox:
+  <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.4"
+    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-virtualbox"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.4"
+    _BOX: "opensuse-tumbleweed"
+    _PROVIDER: "virtualbox"
   needs:
-    - build:libvirt-leap-15.4
+    - build:opensuse-tumbleweed-virtualbox
 
-deploy:libvirt-leap-15.4:
+deploy:opensuse-tumbleweed-virtualbox:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.4"
+    key: "$CI_PIPELINE_ID-opensuse-tumbleweed-virtualbox"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.4"
+    _BOX: "opensuse-tumbleweed"
+    _PROVIDER: "virtualbox"
   needs:
-    - test:libvirt-leap-15.4
+    - test:opensuse-tumbleweed-virtualbox
 
-build:libvirt-leap-15.3:
+build:opensuse-leap-15.4-libvirt:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.3"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.4-libvirt"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.3"
+    _BOX: "opensuse-leap-15.4"
+    _PROVIDER: "libvirt"
 
-test:libvirt-leap-15.3:
-  <<: *job-molecule
+test:opensuse-leap-15.4-libvirt:
+  <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.3"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.4-libvirt"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.3"
+    _BOX: "opensuse-leap-15.4"
+    _PROVIDER: "libvirt"
   needs:
-    - build:libvirt-leap-15.3
+    - build:opensuse-leap-15.4-libvirt
 
-deploy:libvirt-leap-15.3:
+deploy:opensuse-leap-15.4-libvirt:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-libvirt-leap-15.3"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.4-libvirt"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "libvirt"
-    _PACKER_BUILDER_VERSION: "leap-15.3"
+    _BOX: "opensuse-leap-15.4"
+    _PROVIDER: "libvirt"
   needs:
-    - test:libvirt-leap-15.3
+    - test:opensuse-leap-15.4-libvirt
 
-build:virtualbox-tumbleweed:
+build:opensuse-leap-15.4-virtualbox:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-tumbleweed"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.4-virtualbox"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "tumbleweed"
+    _BOX: "opensuse-leap-15.4"
+    _PROVIDER: "virtualbox"
 
-test:virtualbox-tumbleweed:
-  <<: *job-molecule
+test:opensuse-leap-15.4-virtualbox:
+  <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-tumbleweed"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.4-virtualbox"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "tumbleweed"
+    _BOX: "opensuse-leap-15.4"
+    _PROVIDER: "virtualbox"
   needs:
-    - build:virtualbox-tumbleweed
+    - build:opensuse-leap-15.4-virtualbox
 
-deploy:virtualbox-tumbleweed:
+deploy:opensuse-leap-15.4-virtualbox:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-tumbleweed"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.4-virtualbox"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "tumbleweed"
+    _BOX: "opensuse-leap-15.4"
+    _PROVIDER: "virtualbox"
   needs:
-    - test:virtualbox-tumbleweed
+    - test:opensuse-leap-15.4-virtualbox
 
-build:virtualbox-leap-15.4:
+build:opensuse-leap-15.3-libvirt:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.4"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.3-libvirt"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.4"
+    _BOX: "opensuse-leap-15.3"
+    _PROVIDER: "libvirt"
 
-test:virtualbox-leap-15.4:
-  <<: *job-molecule
+test:opensuse-leap-15.3-libvirt:
+  <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.4"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.3-libvirt"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.4"
+    _BOX: "opensuse-leap-15.3"
+    _PROVIDER: "libvirt"
   needs:
-    - build:virtualbox-leap-15.4
+    - build:opensuse-leap-15.3-libvirt
 
-deploy:virtualbox-leap-15.4:
+deploy:opensuse-leap-15.3-libvirt:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.4"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.3-libvirt"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.4"
+    _BOX: "opensuse-leap-15.3"
+    _PROVIDER: "libvirt"
   needs:
-    - test:virtualbox-leap-15.4
+    - test:opensuse-leap-15.3-libvirt
 
-build:virtualbox-leap-15.3:
+build:opensuse-leap-15.3-virtualbox:
   <<: *job-packer-build
   stage: build
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.3"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.3-virtualbox"
     paths:
       - packer/*/output-vagrant
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.3"
+    _BOX: "opensuse-leap-15.3"
+    _PROVIDER: "virtualbox"
 
-test:virtualbox-leap-15.3:
-  <<: *job-molecule
+test:opensuse-leap-15.3-virtualbox:
+  <<: *job-molecule-test
   stage: test
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.3"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.3-virtualbox"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.3"
+    _BOX: "opensuse-leap-15.3"
+    _PROVIDER: "virtualbox"
   needs:
-    - build:virtualbox-leap-15.3
+    - build:opensuse-leap-15.3-virtualbox
 
-deploy:virtualbox-leap-15.3:
+deploy:opensuse-leap-15.3-virtualbox:
   <<: *job-vagrant-cloud-provider-upload
   stage: deploy
   cache:
-    key: "$CI_PIPELINE_ID-virtualbox-leap-15.3"
+    key: "$CI_PIPELINE_ID-opensuse-leap-15.3-virtualbox"
     paths:
       - packer/*/output-vagrant
     policy: pull
   variables:
-    _PACKER_BUILDER_PROVIDER: "virtualbox"
-    _PACKER_BUILDER_VERSION: "leap-15.3"
+    _BOX: "opensuse-leap-15.3"
+    _PROVIDER: "virtualbox"
   needs:
-    - test:virtualbox-leap-15.3
+    - test:opensuse-leap-15.3-virtualbox

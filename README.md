@@ -14,14 +14,14 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 ## Supported Boxes and Respective Packer Template Links
 
   - [`alvistack/opensuse-tumbleweed`](https://app.vagrantup.com/alvistack/boxes/opensuse-tumbleweed)
-      - [`packer/libvirt-tumbleweed/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-tumbleweed/packer.json)
-      - [`packer/virtualbox-tumbleweed/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-tumbleweed/packer.json)
+      - [`packer/opensuse-tumbleweed-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-libvirt/packer.json)
+      - [`packer/opensuse-tumbleweed-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-virtualbox/packer.json)
   - [`alvistack/opensuse-leap-15.4`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.4)
-      - [`packer/libvirt-leap-15.4/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.4/packer.json)
-      - [`packer/virtualbox-leap-15.4/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.4/packer.json)
+      - [`packer/opensuse-leap-15.4-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-libvirt/packer.json)
+      - [`packer/opensuse-leap-15.4-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-virtualbox/packer.json)
   - [`alvistack/opensuse-leap-15.3`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.3)
-      - [`packer/libvirt-leap-15.3/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/libvirt-leap-15.3/packer.json)
-      - [`packer/virtualbox-leap-15.3/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/virtualbox-leap-15.3/packer.json)
+      - [`packer/opensuse-leap-15.3-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.3-libvirt/packer.json)
+      - [`packer/opensuse-leap-15.3-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.3-virtualbox/packer.json)
 
 ## Overview
 
@@ -56,7 +56,7 @@ Once you have [Vagrant](https://www.vagrantup.com/docs/installation) and [Virtau
 You could also run our [Molecule](https://molecule.readthedocs.io/en/stable/) test cases if you have [Vagrant](https://www.vagrantup.com/) and [Libvirt](https://libvirt.org/) installed, e.g.
 
     # Run Molecule on openSUSE Leap 15.4
-    molecule converge -s libvirt-15.4
+    molecule converge -s opensuse-15.4-libvirt
 
 Please refer to [.gitlab-ci.yml](.gitlab-ci.yml) for more information on running Molecule.
 
