@@ -248,6 +248,8 @@ build:opensuse-tumbleweed-virtualbox:
   variables:
     _BOX: "opensuse-tumbleweed"
     _PROVIDER: "virtualbox"
+  allow_failure: true
+  retry: 0
 
 test:opensuse-tumbleweed-virtualbox:
   <<: *job-molecule-test
@@ -262,6 +264,8 @@ test:opensuse-tumbleweed-virtualbox:
     _PROVIDER: "virtualbox"
   needs:
     - build:opensuse-tumbleweed-virtualbox
+  allow_failure: true
+  retry: 0
 
 deploy:opensuse-tumbleweed-virtualbox:
   <<: *job-vagrant-cloud-provider-upload
@@ -276,6 +280,8 @@ deploy:opensuse-tumbleweed-virtualbox:
     _PROVIDER: "virtualbox"
   needs:
     - test:opensuse-tumbleweed-virtualbox
+  allow_failure: true
+  retry: 0
 
 build:opensuse-leap-15.4-libvirt:
   <<: *job-packer-build
@@ -326,6 +332,8 @@ build:opensuse-leap-15.4-virtualbox:
   variables:
     _BOX: "opensuse-leap-15.4"
     _PROVIDER: "virtualbox"
+  allow_failure: true
+  retry: 0
 
 test:opensuse-leap-15.4-virtualbox:
   <<: *job-molecule-test
@@ -340,6 +348,8 @@ test:opensuse-leap-15.4-virtualbox:
     _PROVIDER: "virtualbox"
   needs:
     - build:opensuse-leap-15.4-virtualbox
+  allow_failure: true
+  retry: 0
 
 deploy:opensuse-leap-15.4-virtualbox:
   <<: *job-vagrant-cloud-provider-upload
@@ -354,6 +364,8 @@ deploy:opensuse-leap-15.4-virtualbox:
     _PROVIDER: "virtualbox"
   needs:
     - test:opensuse-leap-15.4-virtualbox
+  allow_failure: true
+  retry: 0
 
 build:opensuse-leap-15.3-libvirt:
   <<: *job-packer-build
@@ -404,6 +416,8 @@ build:opensuse-leap-15.3-virtualbox:
   variables:
     _BOX: "opensuse-leap-15.3"
     _PROVIDER: "virtualbox"
+  allow_failure: true
+  retry: 0
 
 test:opensuse-leap-15.3-virtualbox:
   <<: *job-molecule-test
@@ -418,6 +432,8 @@ test:opensuse-leap-15.3-virtualbox:
     _PROVIDER: "virtualbox"
   needs:
     - build:opensuse-leap-15.3-virtualbox
+  allow_failure: true
+  retry: 0
 
 deploy:opensuse-leap-15.3-virtualbox:
   <<: *job-vagrant-cloud-provider-upload
@@ -432,3 +448,5 @@ deploy:opensuse-leap-15.3-virtualbox:
     _PROVIDER: "virtualbox"
   needs:
     - test:opensuse-leap-15.3-virtualbox
+  allow_failure: true
+  retry: 0
