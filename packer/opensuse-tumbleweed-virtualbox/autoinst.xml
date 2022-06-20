@@ -164,7 +164,7 @@ exit 0
             <package>make</package>
             <package>openssh</package>
             <package>perl</package>
-            <package>python38</package>
+            <package>python</package>
             <package>rsync</package>
             <package>sudo</package>
         </packages>
