@@ -156,13 +156,11 @@ exit 0
             <package>cloud-init</package>
             <package>curl</package>
             <package>e2fsprogs</package>
-            <package>gcc</package>
             <package>growpart</package>
             <package>insserv-compat</package>
             <package>iproute2</package>
             <package>kernel-default</package>
             <package>kernel-source</package>
-            <package>make</package>
             <package>openssh</package>
             <package>perl</package>
             <package>python3</package>
