@@ -13,27 +13,24 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 
 ## Supported Boxes and Respective Packer Template Links
 
-  - [`alvistack/opensuse-tumbleweed`](https://app.vagrantup.com/alvistack/boxes/opensuse-tumbleweed)
-      - [`packer/opensuse-tumbleweed-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-libvirt/packer.json)
-      - [`packer/opensuse-tumbleweed-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-virtualbox/packer.json)
-  - [`alvistack/opensuse-leap-15.4`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.4)
-      - [`packer/opensuse-leap-15.4-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-libvirt/packer.json)
-      - [`packer/opensuse-leap-15.4-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-virtualbox/packer.json)
-  - [`alvistack/opensuse-leap-15.3`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.3)
-      - [`packer/opensuse-leap-15.3-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.3-libvirt/packer.json)
-      - [`packer/opensuse-leap-15.3-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.3-virtualbox/packer.json)
+-   [`alvistack/opensuse-tumbleweed`](https://app.vagrantup.com/alvistack/boxes/opensuse-tumbleweed)
+    -   [`packer/opensuse-tumbleweed-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-libvirt/packer.json)
+    -   [`packer/opensuse-tumbleweed-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-virtualbox/packer.json)
+-   [`alvistack/opensuse-leap-15.4`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.4)
+    -   [`packer/opensuse-leap-15.4-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-libvirt/packer.json)
+    -   [`packer/opensuse-leap-15.4-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-virtualbox/packer.json)
 
 ## Overview
 
-  - Packaging with [Packer](https://www.packer.io/)
-  - Minimal [Vagrant base box implementation](https://www.vagrantup.com/docs/boxes/base)
-  - Support [QEMU Guest Agent](https://wiki.qemu.org/Features/GuestAgent)
-  - Support [VirtualBox Guest Additions](https://www.virtualbox.org/manual/ch04.html)
-  - Support [Vagrant synced folder with rsync](https://www.vagrantup.com/docs/synced-folders/rsync)
-  - Support [Vagrant provisioner with Ansible](https://www.vagrantup.com/docs/provisioning/ansible)
-  - Standardize disk partition with GPT
-  - Standardize file system mount with UUID
-  - Standardize network interface with `eth0`
+-   Packaging with [Packer](https://www.packer.io/)
+-   Minimal [Vagrant base box implementation](https://www.vagrantup.com/docs/boxes/base)
+-   Support [QEMU Guest Agent](https://wiki.qemu.org/Features/GuestAgent)
+-   Support [VirtualBox Guest Additions](https://www.virtualbox.org/manual/ch04.html)
+-   Support [Vagrant synced folder with rsync](https://www.vagrantup.com/docs/synced-folders/rsync)
+-   Support [Vagrant provisioner with Ansible](https://www.vagrantup.com/docs/provisioning/ansible)
+-   Standardize disk partition with GPT
+-   Standardize file system mount with UUID
+-   Standardize network interface with `eth0`
 
 ### Quick Start
 
@@ -41,13 +38,13 @@ Once you have [Vagrant](https://www.vagrantup.com/docs/installation) and [Virtau
 
     # Initialize Vagrant
     vagrant init alvistack/opensuse-leap-15.4
-    
+
     # Start the virtual machine
     vagrant up
-    
+
     # SSH into this machine
     vagrant ssh
-    
+
     # Terminate the virtual machine
     vagrant destroy --force
 
@@ -72,11 +69,11 @@ Version tags ended with `.0.0` are rolling release rebuild by [GitLab pipeline](
 
 ## License
 
-  - Code released under [Apache License 2.0](LICENSE)
-  - Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+-   Code released under [Apache License 2.0](LICENSE)
+-   Docs released under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Author Information
 
-  - Wong Hoi Sing Edison
-      - <https://twitter.com/hswong3i>
-      - <https://github.com/hswong3i>
+-   Wong Hoi Sing Edison
+    -   <https://twitter.com/hswong3i>
+    -   <https://github.com/hswong3i>
