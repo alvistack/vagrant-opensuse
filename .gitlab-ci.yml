@@ -248,7 +248,6 @@ build:opensuse-tumbleweed-virtualbox:
   variables:
     _BOX: "opensuse-tumbleweed"
     _PROVIDER: "virtualbox"
-  allow_failure: true
   retry: 0
 
 test:opensuse-tumbleweed-virtualbox:
@@ -328,7 +327,6 @@ build:opensuse-leap-15.4-virtualbox:
   variables:
     _BOX: "opensuse-leap-15.4"
     _PROVIDER: "virtualbox"
-  allow_failure: true
   retry: 0
 
 test:opensuse-leap-15.4-virtualbox:
