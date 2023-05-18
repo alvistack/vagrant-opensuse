@@ -161,7 +161,7 @@ exit 0
             <package>growpart</package>
             <package>iproute2</package>
             <package>kernel-default</package>
-            <package>kernel-source</package>
+            <package>kernel-default-devel</package>
             <package>openssh</package>
             <package>perl</package>
             <package>python</package>
