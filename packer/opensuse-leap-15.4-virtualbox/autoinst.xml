@@ -73,7 +73,7 @@
                 <partition>
                     <create config:type="boolean">true</create>
                     <partition_nr config:type="integer">1</partition_nr>
-                    <size>512M</size>
+                    <size>8192M</size>
                     <filesystem config:type="symbol">ext4</filesystem>
                     <format config:type="boolean">true</format>
                     <mount>/boot</mount>

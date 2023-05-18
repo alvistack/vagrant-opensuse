@@ -73,7 +73,7 @@
                 <partition t="map">
                     <create t="boolean">true</create>
                     <partition_nr t="integer">1</partition_nr>
-                    <size>512M</size>
+                    <size>8192M</size>
                     <filesystem t="symbol">ext4</filesystem>
                     <format t="boolean">true</format>
                     <mount>/boot</mount>
