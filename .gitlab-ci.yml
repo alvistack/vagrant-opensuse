@@ -248,7 +248,8 @@ build:opensuse-tumbleweed-virtualbox:
   variables:
     _BOX: "opensuse-tumbleweed"
     _PROVIDER: "virtualbox"
-  retry: 0
+  needs:
+    - build:opensuse-tumbleweed-libvirt
 
 test:opensuse-tumbleweed-virtualbox:
   <<: *job-molecule-test
@@ -327,7 +328,8 @@ build:opensuse-leap-15.4-virtualbox:
   variables:
     _BOX: "opensuse-leap-15.4"
     _PROVIDER: "virtualbox"
-  retry: 0
+  needs:
+    - build:opensuse-leap-15.4-libvirt
 
 test:opensuse-leap-15.4-virtualbox:
   <<: *job-molecule-test
