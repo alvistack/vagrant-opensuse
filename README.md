@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/vagrant-opensuse.svg)](https://
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/vagrant-opensuse.svg)](https://github.com/alvistack/vagrant-opensuse/blob/master/LICENSE)
 [![Vagrant Box
-download](https://img.shields.io/badge/dynamic/json?label=alvistack%2Fopensuse-leap-15.4&query=%24.boxes%5B%3A1%5D.downloads&url=https%3A%2F%2Fapp.vagrantup.com%2Fapi%2Fv1%2Fsearch%3Fq%3Dalvistack%2Fopensuse-leap-15.4)](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.4)
+download](https://img.shields.io/badge/dynamic/json?label=alvistack%2Fopensuse-leap-15.5&query=%24.boxes%5B%3A1%5D.downloads&url=https%3A%2F%2Fapp.vagrantup.com%2Fapi%2Fv1%2Fsearch%3Fq%3Dalvistack%2Fopensuse-leap-15.5)](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.5)
 
 openSUSE, formerly SUSE Linux, is a Linux distribution sponsored by SUSE
 Software Solutions Germany GmbH (formerly SUSE Linux GmbH) and other
@@ -28,6 +28,9 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 -   [`alvistack/opensuse-tumbleweed`](https://app.vagrantup.com/alvistack/boxes/opensuse-tumbleweed)
     -   [`packer/opensuse-tumbleweed-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-libvirt/packer.json)
     -   [`packer/opensuse-tumbleweed-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-tumbleweed-virtualbox/packer.json)
+-   [`alvistack/opensuse-leap-15.5`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.5)
+    -   [`packer/opensuse-leap-15.5-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.5-libvirt/packer.json)
+    -   [`packer/opensuse-leap-15.5-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.5-virtualbox/packer.json)
 -   [`alvistack/opensuse-leap-15.4`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.4)
     -   [`packer/opensuse-leap-15.4-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-libvirt/packer.json)
     -   [`packer/opensuse-leap-15.4-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.4-virtualbox/packer.json)
@@ -57,7 +60,7 @@ commands under your [project
 directory](https://learn.hashicorp.com/tutorials/vagrant/getting-started-project-setup?in=vagrant/getting-started):
 
     # Initialize Vagrant
-    vagrant init alvistack/opensuse-leap-15.4
+    vagrant init alvistack/opensuse-leap-15.5
 
     # Start the virtual machine
     vagrant up
@@ -75,8 +78,8 @@ You could also run our
 have [Vagrant](https://www.vagrantup.com/) and
 [Libvirt](https://libvirt.org/) installed, e.g.
 
-    # Run Molecule on openSUSE Leap 15.4
-    molecule converge -s opensuse-15.4-libvirt
+    # Run Molecule on openSUSE Leap 15.5
+    molecule converge -s opensuse-15.5-libvirt
 
 Please refer to [.gitlab-ci.yml](.gitlab-ci.yml) for more information on
 running Molecule.
