@@ -1,6 +1,6 @@
 Vagrant.configure('2') do |config|
-  config.vm.hostname = 'opensuse-leap-15.4'
-  config.vm.box = 'alvistack/opensuse-leap-15.4'
+  config.vm.hostname = 'opensuse-leap-15.5'
+  config.vm.box = 'alvistack/opensuse-leap-15.5'
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.cpu_mode = 'host-passthrough'
