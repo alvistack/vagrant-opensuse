@@ -21,6 +21,7 @@
       "boot_wait": "1s",
       "cpus": 2,
       "disk_size": 131072,
+      "guest_additions_mode": "attach",
       "guest_os_type": "OpenSUSE_64",
       "headless": true,
       "http_directory": "./",
@@ -78,6 +79,19 @@
     }
   ],
   "provisioners": [
+    {
+      "inline": [
+        "set -eu",
+        "sudo zypper -n --gpg-auto-import-keys refresh",
+        "sudo zypper -n dist-upgrade -y --allow-vendor-change",
+        "sudo zypper -n install -y ca-certificates curl gcc glibc-i18ndata glibc-locale hostname iproute2 python3 sudo",
+        "sudo zypper -n install -y dkms kernel-default-devel",
+        "sudo mount /dev/sr1 /mnt",
+        "(echo 'y' | sudo sh /mnt/VBoxLinuxAdditions.run) || echo $?",
+        "sudo umount /mnt"
+      ],
+      "type": "shell"
+    },
     {
       "galaxy_file": "./ansible-galaxy-requirements.yml",
       "inventory_directory": "./",
