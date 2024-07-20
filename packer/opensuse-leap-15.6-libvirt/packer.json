@@ -28,7 +28,7 @@
       "format": "qcow2",
       "headless": true,
       "http_directory": "./",
-      "iso_checksum": "6ecade658ef3e4dd7175176781f80fcd070250fe7e922f6240224ff810755ac6",
+      "iso_checksum": "a74d4072e639c75ca127df3d869c1e57bcc44a093a969550f348a3ead561fe4f",
       "iso_url": "http://downloadcontent.opensuse.org/distribution/leap/15.6/iso/openSUSE-Leap-15.6-DVD-x86_64-Build710.3-Media.iso",
       "memory": 16384,
       "net_device": "virtio-net",
