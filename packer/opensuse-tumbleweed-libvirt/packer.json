@@ -29,7 +29,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "none",
-      "iso_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+      "iso_url": "https://downloadcontent.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
       "memory": 16384,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
