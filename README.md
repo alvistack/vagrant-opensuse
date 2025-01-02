@@ -31,9 +31,6 @@ Learn more about openSUSE: <https://www.opensuse.org/>
 - [`alvistack/opensuse-leap-15.6`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.6)
   - [`packer/opensuse-leap-15.6-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.6-libvirt/packer.json)
   - [`packer/opensuse-leap-15.6-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.6-virtualbox/packer.json)
-- [`alvistack/opensuse-leap-15.5`](https://app.vagrantup.com/alvistack/boxes/opensuse-leap-15.5)
-  - [`packer/opensuse-leap-15.5-libvirt/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.5-libvirt/packer.json)
-  - [`packer/opensuse-leap-15.5-virtualbox/packer.json`](https://github.com/alvistack/vagrant-opensuse/blob/master/packer/opensuse-leap-15.5-virtualbox/packer.json)
 
 ## Overview
 
