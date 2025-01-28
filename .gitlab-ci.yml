@@ -268,7 +268,7 @@ build:opensuse-tumbleweed-virtualbox:
     _PROVIDER: virtualbox
     _ARCHITECTURE: amd64
   needs:
-    - build:opensuse-tumbleweed-libvirt
+    - deploy:opensuse-tumbleweed-libvirt
 
 test:opensuse-tumbleweed-virtualbox:
   <<: *job-molecule-test
@@ -354,7 +354,7 @@ build:opensuse-leap-15.6-virtualbox:
     _PROVIDER: virtualbox
     _ARCHITECTURE: amd64
   needs:
-    - build:opensuse-leap-15.6-libvirt
+    - deploy:opensuse-leap-15.6-libvirt
 
 test:opensuse-leap-15.6-virtualbox:
   <<: *job-molecule-test
