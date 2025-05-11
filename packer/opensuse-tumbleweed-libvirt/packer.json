@@ -15,7 +15,7 @@
         "<tab><tab><tab><tab><tab><tab><tab><tab><tab><tab><wait>",
         "<esc><wait5><enter><wait5>",
         "linux netsetup=dhcp net.ifnames=0 biosdevname=0 systemd.unified_cgroup_hierarchy=1 lang=en_US kexec=3 <wait5>",
-        "rootimage=https://downloadcontent.opensuse.org/tumbleweed/repo/oss/boot/x86_64/root <wait5>",
+        "rootimage=https://download.opensuse.org/tumbleweed/repo/oss/boot/x86_64/root <wait5>",
         "autoyast=http://{{ .HTTPIP }}:{{ .HTTPPort }}/autoinst.xml <wait5>",
         "<enter>"
       ],
@@ -30,7 +30,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "none",
-      "iso_url": "https://downloadcontent.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
+      "iso_url": "https://download.opensuse.org/tumbleweed/iso/openSUSE-Tumbleweed-NET-x86_64-Current.iso",
       "memory": 16384,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
