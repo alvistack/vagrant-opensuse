@@ -128,6 +128,7 @@ sed -ie "s/^GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"net.ifnames=0 biosdevname
 sed -ie "s/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"net.ifnames=0 biosdevname=0 systemd.unified_cgroup_hierarchy=1\"/g" /etc/default/grub
 grub2-mkconfig -o /boot/grub2/grub.cfg
 dracut -f
+netconfig update -f
 exit 0
 ]]></source>
             </script>
