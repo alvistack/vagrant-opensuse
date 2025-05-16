@@ -116,6 +116,15 @@
       changed_when: false
       failed_when: false
 
+    - name: netconfig update -f
+      ansible.builtin.raw: |
+        set -eu
+        netconfig update -f
+      args:
+        executable: /bin/bash
+      changed_when: false
+      failed_when: false
+
     - name: debian | apt-get install *.deb
       ansible.builtin.raw: |
         set -eu
