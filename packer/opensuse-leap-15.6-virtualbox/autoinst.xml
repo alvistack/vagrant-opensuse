@@ -4,19 +4,19 @@
     <add-on>
         <add_on_others config:type="list">
             <listentry>
-                <media_url>http://downloadcontent.opensuse.org/distribution/leap/15.6/repo/oss</media_url>
+                <media_url>http://download.opensuse.org/distribution/leap/15.6/repo/oss</media_url>
                 <name>repo-oss</name>
             </listentry>
             <listentry>
-                <media_url>http://downloadcontent.opensuse.org/distribution/leap/15.6/repo/non-oss</media_url>
+                <media_url>http://download.opensuse.org/distribution/leap/15.6/repo/non-oss</media_url>
                 <name>repo-non-oss</name>
             </listentry>
             <listentry>
-                <media_url>http://downloadcontent.opensuse.org/update/leap/15.6/oss</media_url>
+                <media_url>http://download.opensuse.org/update/leap/15.6/oss</media_url>
                 <name>update-oss</name>
             </listentry>
             <listentry>
-                <media_url>http://downloadcontent.opensuse.org/update/leap/15.6/non-oss</media_url>
+                <media_url>http://download.opensuse.org/update/leap/15.6/non-oss</media_url>
                 <name>update-non-oss</name>
             </listentry>
         </add_on_others>
