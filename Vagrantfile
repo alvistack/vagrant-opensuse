@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "opensuse-leap-15.6"
-  config.vm.box = "alvistack/opensuse-leap-15.6"
+  config.vm.hostname = "opensuse-leap-16.0"
+  config.vm.box = "alvistack/opensuse-leap-16.0"
   config.vm.box_check_update = true
 
   config.vm.provider :virtualbox do |virtualbox, override|
