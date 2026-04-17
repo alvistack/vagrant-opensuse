@@ -34,7 +34,7 @@
       "headless": true,
       "http_directory": "./",
       "iso_checksum": "d780a228058fb4688a31b5bde22d7b97c86e04a2ced33f3d7c8e88a710d96d24",
-      "iso_url": "http://download.opensuse.org/distribution/leap/16.0/offline/Leap-16.0-offline-installer-x86_64-Build171.1.install.iso",
+      "iso_url": "http://downloadcontent.opensuse.org/distribution/leap/16.0/offline/Leap-16.0-offline-installer-x86_64-Build171.1.install.iso",
       "memory": 16384,
       "net_device": "virtio-net",
       "qemu_binary": "kvm",
